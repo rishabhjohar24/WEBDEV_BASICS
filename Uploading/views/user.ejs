@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Users</title>
+</head>
+<body>
+    <nav class="navbar" style="background-color: rgb(50, 107, 153); margin-bottom: 10px;">
+        <form class="container-fluid justify-content-start">
+          <button class="btn me-2 d-flex left" type="button" style="background-color: khaki;"><a href="/show">Back</a></button>
+          <button class="btn me-2" type="button" style="background-color: rgb(35, 153, 189);"><a href="/logout"> Logout </a></button>
+        </form>
+    </nav>
+    
+    <div class="container">
+        <% for(let data of user) { %>
+        <div class="ui massive middle aligned animated list">
+            <div class="item">
+              <img class="ui avatar image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2048px-User_icon_2.svg.png">
+              <div class="content">
+                <div class="header"><a href="/user/<%=data._id%>">
+                    <%=data.name%>
+                </a></div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+    </div>
+</body>
+</html>

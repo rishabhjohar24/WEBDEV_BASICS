@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Photos</title>
+</head>
+<body>
+    <nav class="navbar" style="background-color: rgb(50, 107, 153); margin-bottom: 10px;">
+        <form class="container-fluid justify-content-start">
+          <button class="btn me-2" type="button" style="background-color: khaki;"><a href="/photo/new"> New </a></button>
+          <!-- <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button> -->
+        </form>
+    </nav>
+    <div class="container">
+        <div class="justify-content-center row">
+            <% for(let x of card) { %>
+                <div class="container col-md-4" style="margin-block: 10px;">          
+                    <div class="card " style="width: 18rem;">
+                        <img src="<%= x.imageURL %>" class="card-img-top" alt="..."> 
+                        <div class="card-body">
+                        <h5 class="card-title"><a href="/photo/<%= x._id %>"><%= x.title %></a></h5>
+                        <p class="card-text"><%= x.desc.substring(0,10) %></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><%= x.author %></li>
+                        <li class="list-group-item"><%= x.date.toDateString() %></li>
+                        </ul>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

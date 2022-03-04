@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Photo</title>
+</head>
+<body>
+    <nav class="navbar" style="background-color: rgb(50, 107, 153); margin-bottom: 10px;">
+        <form class="container-fluid justify-content-start">
+          <button class="btn me-2 d-flex left" type="button" style="background-color: khaki;"><a href="/show">Back</a></button>
+          <button class="btn me-2" type="button" style="background-color: rgb(37, 184, 81);"><a href="/user"> User </a></button>
+          <button class="btn me-2" type="button" style="background-color: rgb(35, 153, 189);"><a href="/logout"> Logout </a></button>
+        </form>
+    </nav>
+    <div class="container card mb-3">
+        <img src="<%=idb.imageURL%>" class="card-img-top" alt="..." style="margin-block: 20px;">
+        <div class="container-md">
+            <div class="card-body">
+                <h3 class="card-title"><%=idb.title%></h3>
+                <p class="card-text"><%=idb.desc%></p>
+                <p class="card-text"><small class="text-muted"><%= idb.date.toDateString() %></small><small class="text-muted" style="align: right;">~<%= idb.name %></small></p>
+                <% if(owner.equals(curr)) { %>
+                <button class="btn btn-warning btn-md"><a href="/photo/<%=idb._id%>/edit"> Edit</a></button>
+                <form action="" method="">
+                    <button class="btn btn-daner">Delete</button>
+                </form>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

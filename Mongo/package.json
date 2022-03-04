@@ -1,0 +1,14 @@
+{
+  "name": "mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "nodemon": "nodemon user.js"
+  },
+  "author": "Rishabh",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.13.2"
+  }
+}
